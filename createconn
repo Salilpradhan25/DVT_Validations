@@ -22,3 +22,10 @@ data-validation connections add --connection-name BQ_CONN2 BigQuery --project-id
 
 data-validation connections list
 
+gcloud config set project harshround-pen1
+export PROJECT_ID2=$(gcloud config get-value project)
+data-validation connections add --connection-name BQ_CONN3 BigQuery --project-id $PROJECT_ID2
+data-validation connections list
+
+
+
