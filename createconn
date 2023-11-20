@@ -1,0 +1,24 @@
+sudo apt-get update
+sudo apt-get install -yq git python3 python3-pip python3-distutils
+sudo pip install --upgrade pip virtualenv
+
+virtualenv -p python3 env
+source env/bin/activate
+# Install below 2 packages that are required for Hive connections
+pip install hdfs
+pip install thrift-sasl
+# Install DVT
+pip install google-pso-data-validator==1.7.2
+
+data-validation -h
+data-validation connections add -h
+gcloud config set project round-pen-403209
+export PROJECT_ID=$(gcloud config get-value project)
+
+# BigQuery Source Connection
+data-validation connections add --connection-name BQ_CONN BigQuery --project-id $PROJECT_ID
+# BigQuery Target Connection
+data-validation connections add --connection-name BQ_CONN2 BigQuery --project-id $PROJECT_ID
+
+data-validation connections list
+

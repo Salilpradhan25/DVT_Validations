@@ -1,5 +1,0 @@
-# Startup script for running DVT on GCE Debian 10 VM. Requires sudo
-# Install or update needed software
-sudo apt-get update
-sudo apt-get install -yq git python3 python3-pip python3-distutils
-sudo pip install --upgrade pip virtualenv
