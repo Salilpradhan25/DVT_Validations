@@ -106,5 +106,5 @@ for i in matched_tables:
     for r in results2:
         rows_s[i]=r[0]
 
-print(cols_s==cols_d)
-print(rows_d==rows_s)
+print(cols_s==cols_d) #checked for column names and count
+print(rows_d==rows_s) # checked for number of records
