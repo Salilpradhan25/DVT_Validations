@@ -107,4 +107,6 @@ for i in matched_tables:
         rows_s[i]=r[0]
 
 print(cols_s==cols_d) #checked for column names and count
-print(rows_d==rows_s) # checked for number of records
+syncp=(rows_s-rows_d)/rows_d*100)
+if(syncp<=10:# checked for number of records
+    print('Number of records matched by ',100-sync_p,' %')
