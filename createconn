@@ -27,5 +27,5 @@ export PROJECT_ID2=$(gcloud config get-value project)
 data-validation connections add --connection-name BQ_CONN3 BigQuery --project-id $PROJECT_ID2
 data-validation connections list
 
-
+data-validation validate column --source-conn BQ_CONN --target-conn BQ_CONN2 --tables-list $PROJECT_ID.harsh_1412.credit_card_fraud=$PROJECT_ID.harsh_1412.copy_credit_fraud --sum Transaction_Amount
 
